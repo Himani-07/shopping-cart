@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "../styles/cart.css";
 
-const Cart = ({cart, setCart, handleChange,props }) => {
+const Cart = ({cart, setCart, handleChange,props ,isComplete, setisComplete}) => {
     const [price, setPrice] = useState(0);
      
     //To remove item from your cart
@@ -60,7 +60,7 @@ const Cart = ({cart, setCart, handleChange,props }) => {
 
             <div className="total">
                 <span> Cart Total : ${price}</span>
-                <span> <button>PROCEED TO CHECKOUT</button> </span>
+                <span> <button onClick={() => setisComplete(true)}>PROCEED TO CHECKOUT</button  > </span>
             </div>
         </article>
     );
